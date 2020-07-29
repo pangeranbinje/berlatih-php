@@ -1,4 +1,5 @@
 <?php
+
 function palindrome($str) {
     $output = "false";
     if(strrev($str) == $str){
