@@ -1,6 +1,53 @@
 <?php
 function skor_terbesar($arr){
-//kode di sini
+    $namaLaravel = "";
+    $kelasLaravel = "";
+    $maxLaravel = 0;
+
+    $namaReactNative = "";
+    $kelasReactNative = "";
+    $maxReactNative = 0;
+
+    $namaReactJS = "";
+    $kelasReactJS = "";
+    $maxReactJS = "";
+
+    for($i = 0; $i < count($arr); $i++) {
+        if($arr[$i]["kelas"] == "Laravel" && $arr[$i]["nilai"] > $maxLaravel) {
+            $namaLaravel = $arr[$i]["nama"];
+            $kelasLaravel = $arr[$i]["kelas"];
+            $maxLaravel = $arr[$i]["nilai"];
+        } else if($arr[$i]["kelas"] == "React Native" && $arr[$i]["nilai"] > $maxReactNative) {
+            $namaReactNative = $arr[$i]["nama"];
+            $kelasReactNative = $arr[$i]["kelas"];
+            $maxReactNative = $arr[$i]["nilai"];
+        } else if($arr[$i]["kelas"] == "React JS" && $arr[$i]["nilai"] > $maxReactJS) {
+            $namaReactJS = $arr[$i]["nama"];
+            $kelasReactJS = $arr[$i]["kelas"];
+            $maxReactJS = $arr[$i]["nilai"];
+        }
+    }
+    $arrHasil['Laravel'] = array(
+        "nama" => $namaLaravel,
+        "kelas" => $kelasLaravel,
+        "nilai" => $maxLaravel
+    );
+
+    $arrHasil['React Native'] = array(
+        "nama" => $namaReactNative,
+        "kelas" => $kelasReactNative,
+        "nilai" => $maxReactNative
+    );
+
+    $arrHasil['React JS'] = array(
+        "nama" => $namaReactJS,
+        "kelas" => $kelasReactJS,
+        "nilai" => $maxReactJS
+    );
+
+    echo "<pre>";
+    print_r($arrHasil);
+    echo "</pre>";
 }
 
 // TEST CASES
