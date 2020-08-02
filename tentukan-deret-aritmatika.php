@@ -1,19 +1,13 @@
 <?php
 function tentukan_deret_aritmatika($arr) {
-    $deret=();
-    $deret2=();
-for($i=0; $i <= count($arr); $i++){
-   if($deret === $deret2){
-    $deret=$arr[$i+1]-$arr[$i] ;
-    $deret2=$arr[$i+2]-$arr[$i+1];
-    echo "true";
-    return;
-
+    $b1 = $arr[1] - $arr[0];
+    for($i = 0; $i < sizeof($arr)-1; $i++) {
+        $b2 = $arr[$i+1] - $arr[$i];
+        if($b2 != $b1) {
+            return "false<br>";
+        }
     }
-        echo "false";    
-
-}
-return;
+    return "true<br>";
 }
 
 // TEST CASES
